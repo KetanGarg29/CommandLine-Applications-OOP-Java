@@ -1,101 +1,162 @@
-Zootopia (A Zoo management system)- The implemented java program manages the zoo compromising of
-various classes such as Attraction,Admin,Visitor etc. which helps to run
-various functions for Admins and visitors.This project was made in
-Intellij using Maven. ADMIN 1 - username - Zoey01 password - Z123 ADMIN
-2 - username - Jack01 password - J123
+# 🦁 Zootopia – A Zoo Management System
 
-In this Home folder(main) is in Src folder and jar file is in tagert
-folder. \*Assumptions Made: \* 1. At starting all the attractions are
-set to be closed. 2. At the starting it compromises of 6 hardcoded
-animals (2 belonging to each categorgy-Mammal, Amphibian, Reptile). 3.
-At starting it also comprises of 2 harcoded special Deals. 4. At the
-beginning the, prices of Attraction are setted to be zero , the admin
-have to set the price in Scheduled events for the attractions. 5.
-Visitor does not have any prior membership , he/she have to purchase any
-of the two(Basic/Premium) membership to visit Attractions or Animals. 6.
-Categories are case sensitive , such that while adding animal you should
-enter Mammal and if mammal typed it will not add.
+This is a **Java-based Zoo Management System** built using **Object-Oriented Programming (OOP)** principles. Developed in **IntelliJ IDEA** with **Maven**, the project simulates the functioning of a real-world zoo with separate functionalities for **Admins** and **Visitors**.
 
-At Beginning you have 3 options with you- 1. Enter as Admin 2. Enter as
-Visitor 3. Show special deals
+---
 
-Entering as Admin will ask you to enter Admin\'s username as well as
-password , if they both are correct it will give access to you otherwise
-will show Invalid Admin Details. Functions Provided to you when entered
-as admin by Selecting 1 and entering details- Admin Menu: 1. Manage
-Attractions 2. Manage Animals 3. Schedule Events 4. Set Discounts 5. Set
-Special Deal 6. View Visitor Stats 7. View Feedback 8. Exit(Back to the
-Beginning)
+## 🚀 Features
 
-Entering as Visitor will further show two option: 1.Register(Allow new
-member Registration) 2.Login
+### 🔐 Main Menu Options
+- **Enter as Admin**
+- **Enter as Visitor**
+- **Show Special Deals**
 
-Login will allow you to enter Visitor\'s Email -id as well as password ,
-if he/she entered them corrctly it will login otherwise show a message
-Invalid Details. Functions provided to you when Logged in as a Visitor:
-Visitor Menu: 1. Explore the Zoo 2. Buy Membership 3. Buy Tickets 4.
-View Discounts 5. View Special Deals 6. Visit Animals 7. Visit
-Attractions 8. Leave Feedback 9. Log Out(Logged out for Visitor)
+---
 
-HANDLING OF ERRORS: One functions is defined in Zoo class Getint which
-is used to check the inputs given by user . Such that where int
-variables are defined and user gives some another input such as string
-so it will diplsay Invalid input and ask the user to enter again. Some
-conditions are just implemented such as while registring a new member if
-user inputs age less then or equals to 0 it will show Invalid Input as
-well as same is done for the balance such that if user enters negative
-balance it will show Invalid input.
+## 👨‍💼 Admin Section
 
-ABOUT CLASSES IMPLEMENTED IN PROGRAMS: 1. Abstract class Animal classes
-Mammal , Amphibian and Reptiles class Animal. Private Attributes- id -
-Id have been given to each animal for easy use Name - Animal Name Type -
-Can only be of type Mammal,Amphibian and Reptile Sound - sound of animal
-Description - some lines about that animal
+### 🔑 Admin Credentials
+- **Admin 1**:  
+  - Username: `Zoey01`  
+  - Password: `Z123`
+- **Admin 2**:  
+  - Username: `Jack01`  
+  - Password: `J123`
 
-A constructor was made which sets id,Name,Type,Sound and description of
-a animal.
+### 📋 Admin Menu Options
+1. **Manage Attractions**
+2. **Manage Animals**
+3. **Schedule Events**
+4. **Set Discounts**
+5. **Set Special Deal**
+6. **View Visitor Stats**
+7. **View Feedback**
+8. **Exit (Back to Main Menu)**
 
-2\. class Admin Private Attributes- Username and password Only 2 Admins
-are created as specified above
+---
 
-3\. class SpecialDeal Private Attributes- Attractioncount-On how many
-tickets to apply discount discount - sets discount percentage id -
-assigned by system for easier use
+## 🙋 Visitor Section
 
-4\. class Discount Private Attributes- percentage - to be applied on
-membership DisCode - Discount code Category - whether minor or senior
+### 🧾 Visitor Options
+- **Register** (New member registration)
+- **Login** (Using Email ID and Password)
 
-5\. class Attraction Private Attributes- id - Attraction ID name - name
-of attraction description - what the attraction does. price - charges of
-attraction ticketsold - counts the solded tickets status - whether close
-or open
+### 📲 Visitor Menu Options
+1. **Explore the Zoo**
+2. **Buy Membership** (Basic / Premium)
+3. **Buy Tickets**
+4. **View Discounts**
+5. **View Special Deals**
+6. **Visit Animals**
+7. **Visit Attractions**
+8. **Leave Feedback**
+9. **Log Out**
 
-6\. class Visitor name , age , Phonenumber , balance , mail , password
-and a List of buyed ticket.
+---
 
-7\. class Feedback Just a single attribute specifying the feedback to be
-added.
+## ⚠️ Error Handling & Input Validation
 
-8\. abstract class membership Two classes are extending this class which
-are generally named Basic and Premium to specify about whether the
-membership is Basic or Premium.
+- Custom `getInt()` function ensures proper input type handling (e.g., prevents string instead of int).
+- Age must be **greater than 0**.
+- Balance cannot be **negative**.
+- Category input is **case-sensitive** (e.g., must type `Mammal`, not `mammal`).
+- Invalid login attempts for Admin or Visitor are handled with clear error messages.
 
-9\. class ZOO In this class list of all other clsses are made , and all
-the private functions are implemented in this class which are used in
-main. Excepting some functions which are implemented in Visitor class
-such as buytickets and buymemberhsip.
+---
 
-ABOUT INTERFACES IMPLEMENTED 1.interface discount Two functions- 1. void
-buyticket(); 2. void applydiscount();
+## 📦 Project Structure
 
-2.interface FeedbackInterface Two functions- 1. void setFeedback(String
-s); 2. String getfeedback();
+- **Home Folder (main)**: Located in `src` directory.
+- **Compiled JAR file**: Found in `target` directory.
 
-3\. interface visitor Three functions- 1. int buyticket(int id , double
-price , int percentage); 2.int visitattraction(int id); 3.void
-buymembership(int id , int discountpercentage , int minororsenior);
+---
 
-EXITING THE CODE- There is no way of exiting the code as tasked us in
-Assignment , we can only come back to the menu where a one can gets the
-three options left which are specified above , which are where you can
-enter as vistor or admin or can have special Deals.
+## 📌 Assumptions Made
+
+- All attractions are **closed** by default.
+- Six hardcoded animals:  
+  - **2 Mammals**  
+  - **2 Amphibians**  
+  - **2 Reptiles**
+- Two hardcoded **special deals** exist at startup.
+- All **attraction prices are set to 0** initially and must be updated via scheduling.
+- Visitors must purchase membership before exploring zoo content.
+- **Category names are case-sensitive** when adding animals.
+
+---
+
+## 🧱 Class Overview
+
+### 🐾 `Animal` (Abstract Class)
+- Subclasses: `Mammal`, `Amphibian`, `Reptile`
+- Attributes: `id`, `name`, `type`, `sound`, `description`
+
+### 🛠️ `Admin`
+- Attributes: `username`, `password`  
+- Two predefined admin users
+
+### 🎟️ `SpecialDeal`
+- Attributes: `attractionCount`, `discount`, `id`
+
+### 💸 `Discount`
+- Attributes: `percentage`, `discountCode`, `category` (minor/senior)
+
+### 🎠 `Attraction`
+- Attributes: `id`, `name`, `description`, `price`, `ticketSold`, `status`
+
+### 👤 `Visitor`
+- Attributes: `name`, `age`, `phoneNumber`, `balance`, `email`, `password`, `ticketsPurchased (List)`
+
+### 💬 `Feedback`
+- Attribute: `message` string
+
+### 🪪 `Membership` (Abstract Class)
+- Subclasses: `Basic`, `Premium`
+
+### 🏛️ `Zoo`
+- Central class with all lists and logic implementation
+- Functions like `getInt()`, admin/visitor interfaces, and event handling
+
+---
+
+## 💡 Interfaces Implemented
+
+### 🧾 `Discount`
+- `void buyTicket()`
+- `void applyDiscount()`
+
+### 💬 `FeedbackInterface`
+- `void setFeedback(String s)`
+- `String getFeedback()`
+
+### 🎫 `Visitor`
+- `int buyTicket(int id, double price, int percentage)`
+- `int visitAttraction(int id)`
+- `void buyMembership(int id, int discountPercentage, int ageCategory)`
+
+---
+
+## 🛑 Exit Strategy
+
+- No direct system exit
+- Always returns to the main menu with:
+  - **Enter as Admin**
+  - **Enter as Visitor**
+  - **Show Special Deals**
+
+---
+
+## 💻 Tech Stack
+
+- **Java (JDK 8+)**
+- **Maven** (for dependency and build management)
+- **IntelliJ IDEA** (as the IDE)
+- **Command-Line Interface** (CLI) for user interaction
+
+---
+
+## 📝 Notes
+
+- Ticket pricing and attraction status must be set by the Admin.
+- Visitors cannot interact with attractions or animals without a valid membership.
+- The project demonstrates real-life inspired **zoo operations**, incorporating **roles, permissions, discounts**, and **feedback systems**.
